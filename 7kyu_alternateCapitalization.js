@@ -20,3 +20,16 @@ function capitalize(string) {
       .join(""),
   ];
 }
+
+const alternateCapitalization = (word) => {
+  let firstArr = [];
+  let secondArr = [];
+  word
+    .split("")
+    .map((letter, index) =>
+      index % 2 === 0
+        ? firstArr.push(letter) && secondArr.push(letter.toUpperCase())
+        : secondArr.push(letter) && firstArr.push(letter.toUpperCase())
+    );
+  return [firstArr.join(""), secondArr.join("")];
+};
